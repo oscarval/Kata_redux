@@ -1,0 +1,11 @@
+.Controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3vh;
+  background-color: #173440;
+}
+
+.Controls div{
+    padding: 10px;
+}

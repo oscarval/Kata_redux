@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Controls from "./components/Controls";
-import TodoList from "./components/TodoList";
+import Controls from "./components/Controls/Controls";
+import TodoList from "./components/TodoList/TodoList";
 // import { connect } from "react-redux";
 
 function App(props) {

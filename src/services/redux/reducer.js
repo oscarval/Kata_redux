@@ -19,6 +19,22 @@ function reducer(state = initialState, action) {
         ...state,
         todos: [...state.todos, action.payload],
       };
+    case "TOGGLE_TODO":
+      return {
+        ...state,
+        todos: state.todos.map((todos) =>
+          todos.id === action.payload
+            ? { ...todos, completed: !todos.completed }
+            : todos
+        ),
+      };
+    case "DELETE_TODO":
+      const todoDelete = state.todos.find((todo) => todo.id === action.payload);
+      state.todos.splice(state.todos.indexOf(todoDelete), 1);
+      return {
+        ...state,
+        todos: state.todos,
+      };
     default:
       return state;
   }

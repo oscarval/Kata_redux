@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import "./Controls.css";
 
 const Controls = (props) => {
   const addTodoEnter = (e) => {
@@ -12,15 +13,22 @@ const Controls = (props) => {
 
   return (
     <div className='Controls'>
-      <h1>controles</h1>
-      <input type='text' id='todo-text' onKeyUp={addTodoEnter} />
-      <button onClick={() => props.taskVisibility("ALL")}>All</button>
-      <button onClick={() => props.taskVisibility("COMPLETED")}>
-        Completed
-      </button>
-      <button onClick={() => props.taskVisibility("NO_COMPLETED")}>
-        No complete
-      </button>
+      <div>
+        <input type='text' id='todo-text' onKeyUp={addTodoEnter} />
+      </div>
+      <div>
+        <button onClick={() => props.taskVisibility("ALL")}>All</button>
+      </div>
+      <div>
+        <button onClick={() => props.taskVisibility("COMPLETED")}>
+          Completed
+        </button>
+      </div>
+      <div>
+        <button onClick={() => props.taskVisibility("NO_COMPLETED")}>
+          No completed
+        </button>
+      </div>
     </div>
   );
 };

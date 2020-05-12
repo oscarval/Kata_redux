@@ -1,0 +1,21 @@
+.TodoList {
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoList .todo {
+  padding: 10px 10px;
+  margin: 0 0 5px 0;
+  background-color: #9fbcbf;
+  display: flex;
+  justify-content: space-between;
+}
+.TodoList .todo .todo-actions {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100px;
+}
+
+.TodoList .todo.completed {
+  opacity: 0.5;
+}
