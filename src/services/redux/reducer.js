@@ -14,6 +14,11 @@ function reducer(state = initialState, action) {
         ...state,
         visibilityFilter: action.payload,
       };
+    case "ADD_TODO":
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
     default:
       return state;
   }
