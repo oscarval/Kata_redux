@@ -1,20 +1,18 @@
 const initialState = {
-  visibility: "ALL",
-  todos: [],
+  visibilityFilter: "ALL",
+  todos: [
+    { text: "Hacer la compra", id: Date.now(), completed: true },
+    { text: "Cita peluquería", id: Date.now() + 1, completed: true },
+    { text: "Recoger al niño", id: Date.now() + 2, completed: false },
+  ],
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_TODO":
+    case "CHANGE_VISIBILITY":
       return {
         ...state,
-        todos: [
-          ...state.todos,
-          {
-            text: action.payload,
-            completed: false,
-          },
-        ],
+        visibilityFilter: action.payload,
       };
     default:
       return state;
