@@ -29,11 +29,10 @@ function reducer(state = initialState, action) {
         ),
       };
     case "DELETE_TODO":
-      const todoDelete = state.todos.find((todo) => todo.id === action.payload);
-      state.todos.splice(state.todos.indexOf(todoDelete), 1);
+      const newTodos = state.todos.filter((todo) => todo.id !== action.payload);
       return {
         ...state,
-        todos: state.todos,
+        todos: newTodos,
       };
     default:
       return state;
