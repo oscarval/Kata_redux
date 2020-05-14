@@ -22,10 +22,10 @@ function reducer(state = initialState, action) {
     case "TOGGLE_TODO":
       return {
         ...state,
-        todos: state.todos.map((todos) =>
-          todos.id === action.payload
-            ? { ...todos, completed: !todos.completed }
-            : todos
+        todos: state.todos.map((todo) =>
+          todo.id === action.payloads
+            ? { ...todo, completed: !todo.completed }
+            : todo
         ),
       };
     case "DELETE_TODO":
